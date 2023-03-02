@@ -1,0 +1,257 @@
+.modal {
+  width: 100%;
+  height: 100%;
+}
+.modal_head {
+  padding: 0.5rem;
+  border-bottom: 1px solid $grey-color-2;
+  height: 45px;
+
+  .t-1 {
+    font-family: "raleway-regular", sans-serif;
+    font-size: $size-medium;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+
+  .modal_close {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: $black-color;
+  }
+}
+
+.modal_body {
+  height: calc(100% - 45px);
+  @include padding(1em);
+
+  .normal {
+    background-color: $main-color;
+    border-radius: 0.5rem;
+  }
+
+  // subscription
+  .forfait {
+    border: 1px solid $grey-color-1;
+    border-radius: 0.5rem;
+    @include padding(1rem);
+    transition: all 0.3s ease-in-out;
+
+    input[type="radio"] {
+      margin-right: 1rem;
+    }
+    .title {
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+    .t-2 {
+      font-size: $size-medium;
+      color: $grey-color-1;
+    }
+    .t-1 {
+      color: $black-color;
+      font-family: "amiri", sans-serif;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  }
+  .forfait-active {
+    border: 3px solid $main-color;
+  }
+  // course
+  .course-head {
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid $grey-color-3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .button {
+      height: 100%;
+      background-color: $white-color;
+      color: $grey-color-1;
+      display: flex;
+      align-items: center;
+      transition: all 0.3s ease-in-out;
+      &:not(:last-child) {
+        margin-right: 1.5rem;
+      }
+      .option-icon {
+        margin-right: 0.5rem;
+      }
+    }
+    .active-option {
+      border-bottom: 3px solid $main-color;
+      color: $main-color;
+    }
+  }
+  .course-body {
+    width: 100%;
+    height: calc(100% - 40px);
+    @include padding(0.5rem 0);
+    overflow-y: auto;
+    .left {
+      width: 34%;
+    }
+    .right {
+      width: 64%;
+      height: 100%;
+    }
+    .lesson-form {
+      .left,
+      .center,
+      .right {
+        height: 100%;
+      }
+      .left {
+        width: 28%;
+        .multi-select {
+          z-index: 3;
+        }
+      }
+      .center {
+        width: 24%;
+
+        .browser {
+          width: 100%;
+          position: relative;
+          height: 110px;
+          border: 1px dashed $grey-color-2;
+          border-radius: 0.5rem;
+          color: $grey-color-1;
+          overflow: hidden;
+
+          .input-file {
+            display: none;
+          }
+          .label {
+            color: $grey-color-1;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            cursor: pointer;
+            font-size: $size-small-1;
+            .icon {
+              font-size: 2rem;
+              margin-bottom: 0.5rem;
+            }
+          }
+        }
+        .file-box-content {
+          @include padding(0.5rem 0);
+          .box {
+            width: 100%;
+            display: flex;
+            background-color: #e9f0ff;
+            border-radius: 0.5rem;
+            @include padding(0.5rem);
+            margin-bottom: 0.5rem;
+            .icon {
+              color: $secondary-color;
+              font-size: $size-large;
+              &:first-child {
+                margin-right: 0.5rem;
+              }
+              &:last-child {
+                cursor: pointer;
+                margin-left: auto;
+              }
+            }
+            .title {
+              margin: 0 !important;
+            }
+            span {
+              color: $grey-color-1;
+              font-size: 0.8rem;
+              font-family: "amiri";
+              letter-spacing: 1px;
+            }
+            .progress-bar {
+              width: 90%;
+              .progress-wrapper {
+                width: 100%;
+                height: 10px;
+                background-color: $white-color;
+                border-radius: 0.2rem;
+                overflow: hidden;
+                .progress {
+                  width: 20%;
+                  height: 100%;
+                  background-color: $secondary-color;
+                }
+              }
+              span {
+                color: $black-color;
+              }
+            }
+          }
+        }
+      }
+      .right {
+        width: 46%;
+      }
+    }
+  }
+  // configuration's user
+  .config-head {
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    margin-bottom: 10px;
+    .config-tab {
+      height: 100%;
+      color: $grey-color-1;
+      font-size: $size-small-1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include padding(1rem);
+    }
+    .active-tab {
+      background-color: $main-color;
+      border-radius: 0.5rem;
+      color: $white-color;
+      font-weight: bold;
+      transition: all 0.3s ease-in;
+      span {
+        letter-spacing: 1px;
+      }
+    }
+  }
+  .config-body {
+    height: calc(100% - 50px);
+    .container-48 {
+      width: 48%;
+    }
+    .first-step {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding-top: 1rem;
+    }
+
+    .loader {
+      pointer-events: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      border-top-color: $main-color;
+      margin: auto;
+      animation: _loader 1.4s ease 0.5s infinite;
+    }
+    @keyframes _loader {
+      0% {
+        transform: rotate(0turn);
+      }
+      100% {
+        transform: rotate(1turn);
+      }
+    }
+  }
+}
